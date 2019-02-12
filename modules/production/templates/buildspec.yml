@@ -1,0 +1,13 @@
+version: 0.2
+
+phases:
+  pre_build:
+    commands:
+      - echo Deploy website
+  build:
+    commands:
+      - rm -rf .git
+      - aws s3 sync --delete . s3://${bucket_name} --cache-control max-age=3600
+  post_build:
+    commands:
+      - echo 'Invalidating distribuition cache'

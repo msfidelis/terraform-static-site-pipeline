@@ -1,9 +1,8 @@
-#  Local .terraform directories
-**/.terraform/*
+.vscode
 
-# .tfstate files
-*.tfstate
-*.tfstate.*
+# Terraform
+.terraform/
 
-# .tfvars files
-*.tfvars
+# Comment the following lines to versioning the state
+terraform.tfstate
+terraform.tfstate.backup
