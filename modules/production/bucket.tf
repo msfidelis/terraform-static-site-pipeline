@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "bucket_producao" {
-  bucket = "${var.app_name}-${var.account_id}"
+  bucket = "${var.app_name}-${var.account_id}-${var.git_repository_branch}"
   acl    = "public-read"
 
 cors_rule {
