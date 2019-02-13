@@ -6,11 +6,11 @@
 
 Issue | Technology
 ------------ | -------------
-Git Manager | Github 
-Infrastructure as Code Framework | Terraform - Hashicorp Cloud IaC Manager
-Pipeline / Build Platform | CodePipeline + CodeBuild from AWS
-Hosting System | Amazon S3 -  Low Cost Object Storage with Website feature on AWS
-Caching / CDN System | Amazon Cloudfront - AWS Global Content Delivery Network 
+Git Manager | [Github](https://github.com) 
+Infrastructure Provisioning | [Terraform](https://www.terraform.io) - Hashicorp IaC Multicloud Manager
+Pipeline / Build Platform | [CodePipeline](https://aws.amazon.com/pt/codepipeline/) + [CodeBuild](https://aws.amazon.com/pt/codebuild/) from AWS
+Hosting System | [Amazon S3](https://aws.amazon.com/pt/s3/) -  Low Cost Object Storage with Website feature on AWS
+Caching / CDN System | [Amazon Cloudfront](https://aws.amazon.com/pt/cloudfront/) - AWS Global Content Delivery Network 
 
 
 
