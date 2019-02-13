@@ -2,7 +2,25 @@
 
 > This is a reference to scale DevOps Workflows to Designers and Front End Developers to prototyping, validate and deploy landing pages, React, Vue, Angular Apps.
 
-## 1. Project Configuration
+## 1. Stack
+
+Issue | Technology
+------------ | -------------
+Git Manager | Github 
+Infrastructure as Code Framework | Terraform - Hashicorp Cloud IaC Manager
+Pipeline / Build Platform | CodePipeline + CodeBuild from AWS
+Hosting System | Amazon S3 -  Low Cost Object Storage with Website feature on AWS
+Caching / CDN System | Amazon Cloudfront - AWS Global Content Delivery Network 
+
+
+
+
+
+## 2. Basic Architecture
+
+![Design](.github/img/design.png)
+
+## 3. Project Configuration
 
 Edit the `config.tf` file and input the Github, Project Name, Develop and Production branches e etc.
 
@@ -71,3 +89,5 @@ terraform plan
 ```bash
 terraform apply
 ```
+
+![site deployed](.github/img/site.png)
