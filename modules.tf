@@ -1,6 +1,6 @@
 
 module "production" {
-  source                        = "./modules/production"
+  source                        = "./modules/website"
   app_name                      = "${var.app_name}"
   aws_region                    = "${var.aws_region}"
   git_repository_owner          = "${var.git_repository_owner}"

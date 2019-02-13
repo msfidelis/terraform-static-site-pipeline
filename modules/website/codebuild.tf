@@ -4,7 +4,7 @@ data "template_file" "prod_buildspec" {
   vars {
     app_name    = "${var.app_name}"
     stage       = "${var.git_repository_branch}"
-    bucket_name = "${aws_s3_bucket.bucket_producao.bucket}"
+    bucket_name = "${aws_s3_bucket.bucket_site.bucket}"
     // distribuition_id = "${aws_cloudfront_distribution.prod_s3_distribution.id}"
   }
 }
