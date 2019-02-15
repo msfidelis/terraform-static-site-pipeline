@@ -59,6 +59,29 @@ variable "git_repository_dev_branch" {
 }
 ```
 
+## 2. Edit your build specs
+
+You can edit your build specs in modules/website/templates/buildspec.yml 
+
+```yml
+version: 0.2
+
+phases:
+  pre_build:
+    commands:
+      - echo Deploy website
+  build:
+    commands:
+      - echo "add your steps and scripts here"
+      - rm -rf .git
+      - aws s3 sync --delete . s3://${bucket_name} --cache-control max-age=3600
+  post_build:
+    commands:
+      - echo 'Invalidating distribuition cache'
+      - aws cloudfront create-invalidation --distribution-id ${distribuition_id} --paths "/*"
+
+```
+
 ## 2. Setup Github Access Token
 
 * Create your Github Access Token to Command Line. [This link have all information about this](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/).

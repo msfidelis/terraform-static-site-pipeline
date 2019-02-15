@@ -11,3 +11,4 @@ phases:
   post_build:
     commands:
       - echo 'Invalidating distribuition cache'
+      - aws cloudfront create-invalidation --distribution-id ${distribuition_id} --paths "/*"

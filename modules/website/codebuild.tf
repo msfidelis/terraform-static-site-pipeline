@@ -2,14 +2,15 @@ data "template_file" "prod_buildspec" {
   template = "${file("${path.module}/templates/buildspec.yml")}"
 
   vars {
-    app_name    = "${var.app_name}"
-    stage       = "${var.git_repository_branch}"
-    bucket_name = "${aws_s3_bucket.bucket_site.bucket}"
-    // distribuition_id = "${aws_cloudfront_distribution.prod_s3_distribution.id}"
+    app_name          = "${var.app_name}"
+    stage             = "${var.git_repository_branch}"
+    bucket_name       = "${aws_s3_bucket.bucket_site.bucket}"
+    distribuition_id  = "${aws_cloudfront_distribution.site_s3_distribution.id}"
   }
 }
 
 resource "aws_codebuild_project" "prod_app_build" {
+
   name          = "${var.app_name}-${var.git_repository_branch}-codebuild"
   build_timeout = "80"
   service_role = "${aws_iam_role.codebuild_role.arn}"
@@ -33,6 +34,7 @@ resource "aws_codebuild_project" "prod_app_build" {
     type      = "CODEPIPELINE"
     buildspec = "${data.template_file.prod_buildspec.rendered}"
   }
+
 }
 
 resource "aws_s3_bucket" "source" {
