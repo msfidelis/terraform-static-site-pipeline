@@ -90,4 +90,11 @@ terraform plan
 terraform apply
 ```
 
+* Go to Codepipeline Dashboard on AWS Console
+
+![site deployed](.github/img/pipeline.png)
+
+
+* Access your S3 Bucket output
+
 ![site deployed](.github/img/site.png)

@@ -2,7 +2,7 @@ resource "aws_codepipeline" "prod_pipeline" {
   name     = "${var.app_name}-${var.git_repository_branch}-pipeline"
   role_arn = "${aws_iam_role.codepipeline_role.arn}"
 
-  depends_on = ["aws_s3_bucket.bucket_site"]
+  depends_on = ["aws_s3_bucket.bucket_site", "aws_s3_bucket.source"]
   
   artifact_store {
     location = "${aws_s3_bucket.source.bucket}"

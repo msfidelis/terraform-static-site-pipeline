@@ -14,7 +14,7 @@ resource "aws_codebuild_project" "prod_app_build" {
   build_timeout = "80"
   service_role = "${aws_iam_role.codebuild_role.arn}"
 
-  depends_on = ["aws_s3_bucket.bucket_site"]
+  depends_on = ["aws_s3_bucket.bucket_site", "aws_s3_bucket.source"]
 
   artifacts {
     type = "CODEPIPELINE"
